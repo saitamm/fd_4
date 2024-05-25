@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 09:40:39 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/21 20:48:07 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/23 10:45:57 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void draw_point(t_point x,void *mlx_ptr, void *window)
     mlx_pixel_put(mlx_ptr, window, x.x_ind, x.y_ind, color);
 }
 
-void draw_line(t_point **tab, t_map *map,void *mlx_ptr, void *win_ptr)
+void draw_line(t_point **tab, t_map *map,void *mlx_ptr, void *win_ptr, t_mlx *mlx)
 {
     int i;
     int j;
@@ -42,13 +42,13 @@ void draw_line(t_point **tab, t_map *map,void *mlx_ptr, void *win_ptr)
         j = 0;
         while (j < map->colone)
         {
-            
             if (i + 1 < map->line)
-                bresenham(tab[i][j], tab[i + 1][j], mlx_ptr, win_ptr);
+                bresenham(tab[i][j], tab[i + 1][j], mlx_ptr, win_ptr, mlx);
             if (j + 1 < map->colone)
-                bresenham(tab[i][j], tab[i][j+1], mlx_ptr, win_ptr);  
+                bresenham(tab[i][j], tab[i][j+1], mlx_ptr, win_ptr, mlx);
             j++; 
         }
         i++;
     }
+
 }

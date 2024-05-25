@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:13:29 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/21 20:55:49 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/25 20:12:44 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ int main(int ac, char **av)
     t_map *map;
     t_point **tab;
     t_mlx   *mlx;
-    void *mlx_ptr;
-    void *win_ptr;
+    t_data data;
 
     if (ac != 2)
     {
@@ -37,21 +36,24 @@ int main(int ac, char **av)
     if (!mlx)
         return (0);
     ft_init_mlx(map, mlx);
-    // tab = ft_index_window(ft_to_array(map), mlx, map);
-    tab = initial_z(ft_index_window(ft_to_array(map), mlx, map), map);
-    // double   angle = 30;
-    mlx_ptr = mlx_init();
-    win_ptr = mlx_new_window(mlx_ptr, L_WIN  , LE_WIN, "Point Example");
-    // while (angle < 90)
-    // {
-    tab = rotation_z(tab, map, 45);
-        tab = rotation_x(tab, map, 45);
-        draw_line(tab, map, mlx_ptr, win_ptr);
-    //     printf("************\n");
-    //     angle = angle + 10;
-
-    // }
-    // printf("%d\n", map->colone);
-    // printf(">>>>>%d\n", tab[0][0].x_ind);
-    mlx_loop(mlx_ptr);
+    tab = ft_index_window(ft_to_array(map), mlx, map);
+    int i = 0;
+    while (i < map->line)
+    {
+        int j = 0;
+        while (j < map->colone)
+        {
+            printf("^^%d\n", tab[i][j].red);
+            printf("^^%d\n", tab[i][j].green);
+            printf("^^%d\n", tab[i][j].blue);
+            j++;
+        }
+        i++;
+    }
+    data.mlx = mlx_init();
+    data.win = mlx_new_window(data.mlx, L_WIN  , LE_WIN, "fdf");
+    tab = rotation_z(tab, map, 60);
+    tab = rotation_x(tab, map, 45);
+    draw_line(tab, map, data.mlx, data.win, mlx);
+    mlx_loop(data.mlx);
 }

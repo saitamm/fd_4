@@ -6,7 +6,7 @@
 #    By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:15:01 by sait-amm          #+#    #+#              #
-#    Updated: 2024/05/21 16:44:36 by sait-amm         ###   ########.fr        #
+#    Updated: 2024/05/23 10:48:06 by sait-amm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ SRC =	fdf.c \
 		mandatory/ft_to_array.c \
 		mandatory/fun_initial.c \
 		mandatory/draw_pixel.c \
-		mandatory/add_height.c \
 		get_next_line/get_next_line_utils.c \
 		get_next_line/get_next_line.c \
 		libft/ft_split.c \
@@ -28,7 +27,8 @@ SRC =	fdf.c \
 		libft/ft_atoi.c \
 		libft/ft_atoi_base.c \
 		mandatory/bresenham.c \
-		mandatory/rotation.c
+		mandatory/rotation.c \
+		mandatory/color_rgb.c
 	
 
 OBJF = $(SRC:.c=.o)

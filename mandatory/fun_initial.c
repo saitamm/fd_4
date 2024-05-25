@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:00:42 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/21 18:33:11 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/25 20:06:59 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,26 @@ void    ft_init_map(int fd, t_map *map)
     map->point_num = map->line * map->colone;
 }
 
+int max(int a, int b)
+{
+    if ( a < b)
+        return (b);
+    return (a);
+}
 void   ft_init_mlx(t_map *map, t_mlx *mlx)
 {
     int pixels_x;
-    int pixels_y;
 
     mlx->x_index = INT_START_X;
     mlx->y_index = INT_START_Y;
     mlx->x_max = L_WIN - 100;
     mlx->y_max = LE_WIN - 100;
     pixels_x = mlx->x_max - mlx->x_index;
-    pixels_y = mlx->y_max - mlx->y_index;
-    mlx->ladder_map_x  = pixels_x / (map->colone - 1) ; 
-    mlx->ladder_map_y  = pixels_y / (map->line - 1) ; 
+    mlx->step  = pixels_x /  max(map->line, map->colone) * 0.4;
+    if (mlx->step < 1)
+        mlx->step = 1;
+    else if (mlx->step > 50)
+        mlx->step = 50;
 }
 
 t_point **ft_index_window(t_point **tab, t_mlx *mlx, t_map *map)
@@ -67,15 +74,14 @@ t_point **ft_index_window(t_point **tab, t_mlx *mlx, t_map *map)
 
     i = 0;
     j = 0;
-    printf("::::%d\n", mlx->ladder_map_x);
-    printf("::::%d\n", mlx->ladder_map_y);
+    
     while(i < map->line )
     {
         j = 0;
         while(j < map->colone)
         {
-            tab[i][j].x_ind = j * 50 + mlx->x_index;
-            tab[i][j].y_ind = i * 50 + mlx->y_index;
+            tab[i][j].x_ind = j * mlx->step + mlx->x_index;
+            tab[i][j].y_ind = i * mlx->step + mlx->y_index;
             j++;
         }
         i++;

@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:37:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/21 20:53:22 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/25 12:43:09 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ t_point **rotation_z(t_point **tab, t_map *map, double angle)
     i = 0;
     j = 0;
     alpha = angle * PI / 180;
-    printf("%%%lf\n", angle);
     while (i < map->line)
     {
         j = 0;
@@ -89,11 +88,13 @@ t_point **rotation_z(t_point **tab, t_map *map, double angle)
             tmp = tab[i][j].x_ind;
             tab[i][j].x_ind = (double)tab[i][j].x_ind - sin(alpha) * (double)tab[i][j].y_ind;
             tab[i][j].y_ind = (double)tmp * sin(alpha) + cos(alpha) * (double)tab[i][j].y_ind ;
-            tab[i][j].z = tab[i][j].z;
-            tab[i][j].x_ind += 550;
-            tab[i][j].y_ind += 450; 
-            // tab[i][j].x_ind += tab[i][j].x_ind / 2;
-            // tab[i][j].y_ind += tab[i][j].y_ind / 2; 
+            
+            // if (tab[i][j].z < 10)
+            //     tab[i][j].z = tab[i][j].z * 10;
+            // else 
+                tab[i][j].z = tab[i][j].z * 3;
+            tab[i][j].x_ind += 900;
+            tab[i][j].y_ind += 700;
             j++;
         }
         i++;

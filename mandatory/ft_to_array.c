@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 10:23:38 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/20 10:04:42 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/24 11:23:12 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_point **ft_to_array(t_map *map)
     char *cpy;
 
     i = 0;
-    
     tab = (t_point **) malloc(map->line * sizeof(t_point *));
     if (!tab)
         return (NULL);
