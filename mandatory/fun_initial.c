@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:00:42 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/25 20:06:59 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/27 19:05:29 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int max(int a, int b)
         return (b);
     return (a);
 }
-void   ft_init_mlx(t_map *map, t_mlx *mlx)
+void   ft_init_mlx(t_map map, t_mlx *mlx)
 {
     int pixels_x;
 
@@ -60,28 +60,31 @@ void   ft_init_mlx(t_map *map, t_mlx *mlx)
     mlx->x_max = L_WIN - 100;
     mlx->y_max = LE_WIN - 100;
     pixels_x = mlx->x_max - mlx->x_index;
-    mlx->step  = pixels_x /  max(map->line, map->colone) * 0.4;
-    if (mlx->step < 1)
-        mlx->step = 1;
+    mlx->step  = pixels_x /  max(map.line, map.colone) * 0.4;
+    printf("^^%d\n", mlx->step);
+    if (mlx->step <= 1)
+    {
+        mlx->step = 2;
+    }
     else if (mlx->step > 50)
         mlx->step = 50;
 }
 
-t_point **ft_index_window(t_point **tab, t_mlx *mlx, t_map *map)
+t_point **ft_index_window(t_point **tab, t_mlx mlx, t_map map)
 {
     int i;
     int j;
 
     i = 0;
     j = 0;
-    
-    while(i < map->line )
+    printf("^^%d\n", mlx.y_index);
+    while(i < map.line )
     {
         j = 0;
-        while(j < map->colone)
+        while(j < map.colone)
         {
-            tab[i][j].x_ind = j * mlx->step + mlx->x_index;
-            tab[i][j].y_ind = i * mlx->step + mlx->y_index;
+            tab[i][j].x_ind = j * mlx.step + mlx.x_index;
+            tab[i][j].y_ind = i * mlx.step + mlx.y_index;
             j++;
         }
         i++;

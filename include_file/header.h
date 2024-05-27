@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/25 19:58:40 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/27 11:45:15 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,18 @@ typedef struct s_col
 // inittial function
 
 void    ft_init_map(int fd, t_map *map);
-void   ft_init_mlx(t_map *map, t_mlx *mlx);
+void   ft_init_mlx(t_map map, t_mlx *mlx);
 int num_line( char *buff);
 int num_colone( char *buff);
-t_point **ft_index_window(t_point **tab, t_mlx *mlx, t_map *map);
+t_point **ft_index_window(t_point **tab, t_mlx mlx, t_map map);
 t_bres  *ft_initial(t_point x, t_point y);
 int initial_p_k(t_point x, t_point y);
-void bresenham( t_point x, t_point y, void *mlx_ptr, void *mlx_win, t_mlx *mlx);
-void draw_line(t_point **tab, t_map *map,void *mlx_ptr, void *win_ptr, t_mlx *mlx);
+void bresenham( t_point x, t_point y, void *mlx_ptr, void *mlx_win);
+void draw_line(t_point **tab, t_map map,t_data data);
 
 // map function
-// void draw_point(t_point **tab, t_map *map,void *win_ptr, void *window);
-t_point **ft_to_array(t_map *map);
+// void draw_point(t_point **tab, t_map map,void *win_ptr, void *window);
+t_point **ft_to_array(t_map map);
 t_point  *sub_array(int i, int colone, char *buff);
 char *ft_read_map(int fd);
 int ft_len_line(char *buff);
@@ -102,9 +102,9 @@ void    whith_color(int i, int j, t_point *tab, char *str);
 
 //rotation function
 
-t_point **rotation_x(t_point **tab, t_map *map, double angle);
-t_point **rotation_y(t_point **tab, t_map *map, double angle);
-t_point **rotation_z(t_point **tab, t_map *map, double angle);
+t_point **rotation_x(t_point **tab, t_map map, double angle);
+t_point **rotation_y(t_point **tab, t_map map, double angle);
+t_point **rotation_z(t_point **tab, t_map map, double angle);
 
 
 //color function

@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 10:18:14 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/25 20:01:55 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:51:50 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int initial_p_k(t_point x, t_point y)
     return (p_k);
 }
 
-void bresenham(t_point p0, t_point p1, void *mlx_ptr, void *win_ptr, t_mlx *mlx) 
+void bresenham(t_point p0, t_point p1, void *mlx_ptr, void *win_ptr) 
 {
     int dx;
     int dy; 
@@ -60,11 +60,10 @@ void bresenham(t_point p0, t_point p1, void *mlx_ptr, void *win_ptr, t_mlx *mlx)
     else
         sy = -1;
     err = dx - dy;
-    printf("%d\n", mlx->step);
     color = p0.red *256 *256 + p0.green * 256 + p0.blue;
     while (1) 
     {
-        color = crem_color(&p0, p1, mlx->step + 1);
+        color = crem_color(&p0, p1, 72);
         mlx_pixel_put(mlx_ptr, win_ptr, p0.x_ind, p0.y_ind, color); 
         if (p0.x_ind == p1.x_ind && p0.y_ind == p1.y_ind) 
             break;

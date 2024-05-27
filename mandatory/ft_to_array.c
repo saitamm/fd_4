@@ -6,27 +6,27 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 10:23:38 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/24 11:23:12 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/27 11:33:30 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include_file/header.h"
 
-t_point **ft_to_array(t_map *map)
+t_point **ft_to_array(t_map map)
 {
     int         i;
     t_point **tab;
     char *cpy;
 
     i = 0;
-    tab = (t_point **) malloc(map->line * sizeof(t_point *));
+    tab = (t_point **) malloc(map.line * sizeof(t_point *));
     if (!tab)
         return (NULL);
-    while (i < map->line)
+    while (i < map.line)
     {
-        cpy = ft_strcpy(map->buff);
-        map->buff = map->buff + ft_strlen(cpy) + 1;
-        tab[i] = sub_array(i, map->colone,cpy);
+        cpy = ft_strcpy(map.buff);
+        map.buff = map.buff + ft_strlen(cpy) + 1;
+        tab[i] = sub_array(i, map.colone,cpy);
         free(cpy);
         i++;
     }
