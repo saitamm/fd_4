@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 20:01:58 by sait-amm          #+#    #+#             */
-/*   Updated: 2023/12/01 10:07:54 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:25:49 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s2)
 		return (ft_strdup(s1));
 	d = ft_cpy(s1, s2);
+	free((void *)s1);
 	return (d);
 }

@@ -6,29 +6,31 @@
 #    By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:15:01 by sait-amm          #+#    #+#              #
-#    Updated: 2024/05/23 10:48:06 by sait-amm         ###   ########.fr        #
+#    Updated: 2024/05/28 13:32:27 by sait-amm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC =	fdf.c \
-		mandatory/ft_utils.c \
-		mandatory/ft_to_array.c \
-		mandatory/fun_initial.c \
-		mandatory/draw_pixel.c \
-		get_next_line/get_next_line_utils.c \
-		get_next_line/get_next_line.c \
 		libft/ft_split.c \
 		libft/ft_strlen.c \
 		libft/ft_strdup.c \
 		libft/ft_strjoin.c \
 		libft/ft_strlcpy.c \
-		mandatory/read_map.c \
 		libft/ft_strchr.c \
 		libft/ft_atoi.c \
 		libft/ft_atoi_base.c \
+		get_next_line/get_next_line_utils.c \
+		get_next_line/get_next_line.c \
+		mandatory/ft_utils.c \
+		mandatory/ft_to_array.c \
+		mandatory/fun_initial.c \
+		mandatory/draw_pixel.c \
+		mandatory/read_map.c \
 		mandatory/bresenham.c \
 		mandatory/rotation.c \
-		mandatory/color_rgb.c
+		mandatory/color_rgb.c \
+		mandatory/free_fun.c \
+		mandatory/key_mouse.c
 	
 
 OBJF = $(SRC:.c=.o)

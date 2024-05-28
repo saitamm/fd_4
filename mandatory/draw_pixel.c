@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 09:40:39 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/27 11:44:57 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/28 13:31:42 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,8 @@ float ft_spole(t_point *point_1, t_point *point_2)
     return (dy / dx);
 }
 
-void draw_point(t_point x,void *mlx_ptr, void *window)
-{
-    int color;
 
-    color = x.red * 256 * 256 + x.green * 256 + x.blue;
-    mlx_pixel_put(mlx_ptr, window, x.x_ind, x.y_ind, color);
-}
-
-void draw_line(t_point **tab, t_map map,t_data data)
+void draw_line(t_point **tab, t_map map,t_data *data)
 {
     int i;
     int j;
@@ -43,9 +36,12 @@ void draw_line(t_point **tab, t_map map,t_data data)
         while (j < map.colone)
         {
             if (i + 1 < map.line)
-                bresenham(tab[i][j], tab[i + 1][j], data.mlx, data.win);
+            {
+                printf("::::: ::::::::::::::::::::\n");
+                bresenham(tab[i][j], tab[i + 1][j], data);
+            }
             if (j + 1 < map.colone)
-                bresenham(tab[i][j], tab[i][j+1], data.mlx, data.win);
+                bresenham(tab[i][j], tab[i][j+1], data);
             j++; 
         }
         i++;

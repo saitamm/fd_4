@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 10:18:14 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/27 18:51:50 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/28 13:30:22 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,13 @@ int initial_p_k(t_point x, t_point y)
     return (p_k);
 }
 
-void bresenham(t_point p0, t_point p1, void *mlx_ptr, void *win_ptr) 
+void my_mlx_pixel_put(t_data *data, int x, int y, int color)
+{
+    int offset;
+    offset = (y * data->size_line) + (x * (data->bpp / 8));
+    *((unsigned int *)(data->img_data + offset)) = color;
+}
+void bresenham(t_point p0, t_point p1,t_data *data) 
 {
     int dx;
     int dy; 
@@ -64,7 +70,7 @@ void bresenham(t_point p0, t_point p1, void *mlx_ptr, void *win_ptr)
     while (1) 
     {
         color = crem_color(&p0, p1, 72);
-        mlx_pixel_put(mlx_ptr, win_ptr, p0.x_ind, p0.y_ind, color); 
+        my_mlx_pixel_put(data, p0.x_ind, p0.y_ind, color); 
         if (p0.x_ind == p1.x_ind && p0.y_ind == p1.y_ind) 
             break;
         e2 = err * 2;

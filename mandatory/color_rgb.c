@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 10:24:09 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/27 19:04:46 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:21:21 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,9 @@ float step_b(int x_blue, int y_blue, int nbr_pixel)
 void crem_red(int *x_red, int y_red, int nbr_pixel)
 {
     if (*x_red < y_red)
-    {
-        
         *x_red = *x_red + step_r(*x_red, y_red, nbr_pixel);
-    }
     else if (*x_red > y_red)
-    {
         *x_red = *x_red - step_r(*x_red, y_red, nbr_pixel);
-    }
 }
 void crem_green(int *x_green, int y_green, int nbr_pixel)
 {
@@ -70,7 +65,6 @@ int crem_color(t_point *x, t_point y, int nbr_pixel)
     int color_2;
 
 
-    // printf("***********************%d\n", nbr_pixel);
     color_1 =x->red * 256 * 256 + x->green * 256 +x->blue ;
     color_2 =y.red * 256 * 256 + y.green * 256 +y.blue ;
 
@@ -81,13 +75,7 @@ int crem_color(t_point *x, t_point y, int nbr_pixel)
         crem_blue(&x->blue, y.blue, nbr_pixel);
     }
     color_1 =x->red * 256 *256 +x->green * 256 +x->blue;
-        // printf("(%d, %d)\n", x->green, x->blue);
-
     return (color_1);
 }
 
-int create_trgb(int r, int g, int b,int t)
-{
-    return (t << 24 | r << 16 | g << 8 | b);
-}
 

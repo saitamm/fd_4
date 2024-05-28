@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:00:42 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/27 19:05:29 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:26:41 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void   ft_init_mlx(t_map map, t_mlx *mlx)
     mlx->y_max = LE_WIN - 100;
     pixels_x = mlx->x_max - mlx->x_index;
     mlx->step  = pixels_x /  max(map.line, map.colone) * 0.4;
-    printf("^^%d\n", mlx->step);
     if (mlx->step <= 1)
     {
         mlx->step = 2;
@@ -77,7 +76,6 @@ t_point **ft_index_window(t_point **tab, t_mlx mlx, t_map map)
 
     i = 0;
     j = 0;
-    printf("^^%d\n", mlx.y_index);
     while(i < map.line )
     {
         j = 0;

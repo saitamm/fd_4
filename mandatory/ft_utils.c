@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 09:45:33 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/22 20:49:49 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:26:15 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,4 @@ int num_colone(char *buff)
         i++;
     }
     return len;
-}
-
-int ft_len_line(char *buff)
-{
-    int i;
-
-    i = 0;
-    while (buff[i] && buff[i] != '\n')
-        i++;
-    return (i);
 }
