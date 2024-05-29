@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/28 13:28:07 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/29 08:58:22 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 # define L_WIN 1920
 # define STEP_WIN 50
 # define PI 3.14159265359
-# define ZOOM_FAC 2
+# define ZOOM_FAC 20
+# define ESC_KEY 65307
+# define DESTROY_NOTIFY 17
 # include "../get_next_line/get_next_line.h"
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
@@ -130,7 +132,8 @@ int			ft_str_len(char **str);
 void		ft_free_double(char **str, int i);
 void    free_map(t_map map);
 
-//function zoom and rot
+//key function
 t_point **zoom_int(t_data *data, t_point **tab, t_map map);
-
+int handle_key(int keycode, t_data *data);
+int handle_close(t_data *data);
 #endif

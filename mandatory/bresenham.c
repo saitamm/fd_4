@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 10:18:14 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/28 13:30:22 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/29 09:31:26 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ int initial_p_k(t_point x, t_point y)
 void my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
     int offset;
+      if (x < 0 || x >= L_WIN || y < 0 || y >= LE_WIN) {
+        return;
+    }
     offset = (y * data->size_line) + (x * (data->bpp / 8));
     *((unsigned int *)(data->img_data + offset)) = color;
 }

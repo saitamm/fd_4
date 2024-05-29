@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 09:40:39 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/28 13:31:42 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/28 17:49:28 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void draw_line(t_point **tab, t_map map,t_data *data)
         {
             if (i + 1 < map.line)
             {
-                printf("::::: ::::::::::::::::::::\n");
                 bresenham(tab[i][j], tab[i + 1][j], data);
             }
             if (j + 1 < map.colone)

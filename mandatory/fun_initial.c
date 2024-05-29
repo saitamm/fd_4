@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:00:42 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/28 10:26:41 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/29 15:29:47 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,24 @@ void    whithout_color(int i, int j, t_point *tab, char *str)
     tab->z = ft_atoi(str);
 }
 
+char *add_char(char *str)
+{
+    char *src;
+    int i;
+
+    i = 0;
+    src = malloc((ft_strlen(str) + 2) *sizeof(char));
+    if (!src)
+        return (NULL);
+    src[i] = '0';
+    while (str[i])
+    {
+        src[i+1] = str[i];
+        i++;
+    }
+    src[i+1] = '\0';
+    return (src);
+}
 void    whith_color(int i, int j, t_point *tab, char *str)
 {
     tab->y = i;
@@ -30,6 +48,8 @@ void    whith_color(int i, int j, t_point *tab, char *str)
     while (str && str[0] != 'x')
         str++;
     str++;
+    while (ft_strlen(str) < 6)
+        str = add_char(str);
     tab->red = ft_atoi_base(str, 16, 0);
     str = str+2;
     tab->green = ft_atoi_base(str, 16, 0);
@@ -63,7 +83,7 @@ void   ft_init_mlx(t_map map, t_mlx *mlx)
     mlx->step  = pixels_x /  max(map.line, map.colone) * 0.4;
     if (mlx->step <= 1)
     {
-        mlx->step = 2;
+        mlx->step = 1;
     }
     else if (mlx->step > 50)
         mlx->step = 50;

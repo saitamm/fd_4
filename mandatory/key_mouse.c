@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 08:51:13 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/28 13:28:32 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/29 09:02:54 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,20 @@ t_point **zoom_int(t_data *data, t_point **tab, t_map map)
     data->img_data = new_data;
     mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
     return (tab);
+}
+
+int handle_key(int keycode, t_data *data) 
+{
+    if (keycode == ESC_KEY) {
+        mlx_destroy_window(data->mlx, data->win);
+        exit(0);
+    }
+    return 0;
+}
+
+int handle_close(t_data *data)
+{
+    mlx_destroy_window(data->mlx, data->win);
+    exit(0);
+    return (0);
 }

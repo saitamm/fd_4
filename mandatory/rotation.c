@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:37:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/28 10:24:36 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/29 15:30:23 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,9 @@ t_point **rotation_z(t_point **tab, t_map map, double angle)
             tmp = tab[i][j].x_ind;
             tab[i][j].x_ind = (double)tab[i][j].x_ind - sin(alpha) * (double)tab[i][j].y_ind;
             tab[i][j].y_ind = (double)tmp * sin(alpha) + cos(alpha) * (double)tab[i][j].y_ind;
-            tab[i][j].z  *= 5;
+            tab[i][j].z  *= 2;
             tab[i][j].x_ind += 900;
-            tab[i][j].y_ind += 900;
+            tab[i][j].y_ind += 1000;
             j++;
         }
         i++;
