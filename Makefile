@@ -6,7 +6,7 @@
 #    By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:15:01 by sait-amm          #+#    #+#              #
-#    Updated: 2024/05/30 12:34:38 by sait-amm         ###   ########.fr        #
+#    Updated: 2024/05/30 17:15:54 by sait-amm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRC =	fdf.c \
 		mandatory/rotation.c \
 		mandatory/color_rgb.c \
 		mandatory/free_fun.c \
-		mandatory/key_mouse.c
+		mandatory/zoom.c \
+		mandatory/rot_xyz.c
 	
 
 OBJF = $(SRC:.c=.o)

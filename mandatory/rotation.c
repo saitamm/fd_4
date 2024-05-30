@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:37:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/30 09:28:30 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:19:39 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,11 +107,10 @@ int max_z(t_point **tab, t_map map)
         }
         i++;
     }
-    printf("????????????%d\n", max_z);
     return (max_z);
 }
 
-t_point rot_z(t_point **tab, t_map map)
+t_point middle(t_point **tab, t_map map)
 {
     int i;
     int j;
@@ -144,7 +143,7 @@ t_point **rotation_z(t_point **tab, t_map map, double angle)
     min = min_z(tab, map);
     i = 0;
     alpha = angle * PI / 180;
-    midle = rot_z(tab, map);
+    midle = middle(tab, map);
     while (i < map.line)
     {
         j = 0;

@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/30 12:52:10 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:42:32 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,13 @@ typedef struct s_bres
 	float	slope;
 }			t_bres;
 
+typedef struct s_rot
+{
+	double angle_x;
+	double angle_y;
+	double angle_z;
+}t_rot;
+
 typedef struct s_data
 {
 	void	*mlx;
@@ -83,6 +90,7 @@ typedef struct s_data
 	int		size_line;
 	int		endian;
     int     zoom_level;
+	t_rot angle;
 }			t_data;
 
 // initial function
@@ -128,7 +136,7 @@ void		draw_line(t_point **tab, t_map map, t_data *data);
 
 // help function
 int			max(int a, int b);
-t_point		rot_z(t_point **tab, t_map map);
+t_point		middle(t_point **tab, t_map map);
 
 // function to free
 
@@ -137,7 +145,7 @@ void		ft_free_double(char **str, int i);
 void    free_map(t_map map);
 
 //key function
-t_point **zoom_int(t_data *data, t_point **tab, t_map map);
+// t_point **zoom_int(t_data *data, t_point **tab, t_map map);
 int handle_key(int keycode, t_data *data);
 int handle_close(t_data *data);
 
@@ -145,4 +153,8 @@ int handle_close(t_data *data);
 void draw_image_in(t_data *data);
 void draw_image_out(t_data *data);
 void update_data(t_data **data);
+void rot_x(t_data *data);
+void update_data_rot(t_data **data);
+void rot_y(t_data *data);
+void rot_z(t_data *data);
 #endif
