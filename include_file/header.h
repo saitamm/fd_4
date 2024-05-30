@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/29 08:58:22 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:52:10 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,9 @@ typedef struct s_data
 	void	*win;
 	void	*img;
 	char	*img_data;
+	t_point **tab;
+	t_map	map;
+	t_mlx	stp;
 	int		bpp;
 	int		size_line;
 	int		endian;
@@ -91,6 +94,7 @@ int			num_colone(char *buff);
 t_point		**ft_index_window(t_point **tab, t_mlx mlx, t_map map);
 t_bres		*ft_initial(t_point x, t_point y);
 int			initial_p_k(t_point x, t_point y);
+t_data *initial_data(int fd);
 
 // map function
 
@@ -136,4 +140,9 @@ void    free_map(t_map map);
 t_point **zoom_int(t_data *data, t_point **tab, t_map map);
 int handle_key(int keycode, t_data *data);
 int handle_close(t_data *data);
+
+//image function
+void draw_image_in(t_data *data);
+void draw_image_out(t_data *data);
+void update_data(t_data **data);
 #endif

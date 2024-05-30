@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:37:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/29 15:30:23 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/30 09:28:30 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,50 @@ t_point **rotation_y(t_point **tab, t_map map, double angle)
     return (tab);
 }
 
+int min_z(t_point **tab, t_map map)
+{
+    int i;
+    int j;
+    int min_z;
+
+    min_z = tab[0][0].z;
+    i = 0;
+    while (i < map.line)
+    {
+        j = 0;
+        while (j < map.colone)
+        {
+            if (tab[i][j].z < min_z)
+                min_z = tab[i][j].z;
+            j++;
+        }
+        i++;
+    }
+    return (min_z);
+}
+int max_z(t_point **tab, t_map map)
+{
+    int i;
+    int j;
+    int max_z;
+
+    i = 0;
+    max_z = tab[0][0].z;
+    while (i < map.line)
+    {
+        j = 0;
+        while (j < map.colone)
+        {
+            if (tab[i][j].z > max_z)
+                max_z = tab[i][j].z;
+            j++;
+        }
+        i++;
+    }
+    printf("????????????%d\n", max_z);
+    return (max_z);
+}
+
 t_point rot_z(t_point **tab, t_map map)
 {
     int i;
@@ -93,10 +137,12 @@ t_point **rotation_z(t_point **tab, t_map map, double angle)
     double alpha;
     int tmp;
     t_point midle;
-    
+    int max;
+    int min;
 
+    max = max_z(tab, map);
+    min = min_z(tab, map);
     i = 0;
-    j = 0;
     alpha = angle * PI / 180;
     midle = rot_z(tab, map);
     while (i < map.line)
@@ -109,9 +155,14 @@ t_point **rotation_z(t_point **tab, t_map map, double angle)
             tmp = tab[i][j].x_ind;
             tab[i][j].x_ind = (double)tab[i][j].x_ind - sin(alpha) * (double)tab[i][j].y_ind;
             tab[i][j].y_ind = (double)tmp * sin(alpha) + cos(alpha) * (double)tab[i][j].y_ind;
-            tab[i][j].z  *= 2;
+            if (max <= 10)
+                tab[i][j].z  *= 65;
+            else if (max > 10 && max <= 20 && min > 0)
+                tab[i][j].z *= 50;
+            else
+                tab[i][j].z *= 3;
             tab[i][j].x_ind += 900;
-            tab[i][j].y_ind += 1000;
+            tab[i][j].y_ind += 1100;
             j++;
         }
         i++;

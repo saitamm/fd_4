@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 10:18:14 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/29 09:31:26 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:57:23 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void bresenham(t_point p0, t_point p1,t_data *data)
         sy = -1;
     err = dx - dy;
     color = p0.red *256 *256 + p0.green * 256 + p0.blue;
+
     while (1) 
     {
         color = crem_color(&p0, p1, 72);

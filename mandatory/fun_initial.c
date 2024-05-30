@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:00:42 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/29 15:29:47 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:54:17 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void    whith_color(int i, int j, t_point *tab, char *str)
     tab->blue = ft_atoi_base(str, 16, 0);
 }
 
-void    ft_init_map(int fd, t_map *map)
+void ft_init_map(int fd, t_map *map)
 {
     map->buff = ft_read_map(fd);
     map->line = num_line(map->buff);
@@ -80,10 +80,10 @@ void   ft_init_mlx(t_map map, t_mlx *mlx)
     mlx->x_max = L_WIN - 100;
     mlx->y_max = LE_WIN - 100;
     pixels_x = mlx->x_max - mlx->x_index;
-    mlx->step  = pixels_x /  max(map.line, map.colone) * 0.4;
+    mlx->step  = pixels_x /  max(map.line, map.colone) * 0.6;
     if (mlx->step <= 1)
     {
-        mlx->step = 1;
+        mlx->step = 2;
     }
     else if (mlx->step > 50)
         mlx->step = 50;
@@ -108,4 +108,21 @@ t_point **ft_index_window(t_point **tab, t_mlx mlx, t_map map)
         i++;
     }
     return (tab);
+}
+
+t_data *initial_data(int fd)
+{
+    t_data *data;
+
+    data = (t_data *)malloc(sizeof(t_data));
+    if (!data)
+        return (NULL);
+    data->mlx = mlx_init();
+    data->img = mlx_new_image(data->mlx, L_WIN, LE_WIN);
+    data->img_data = mlx_get_data_addr(data->img, &data->bpp, &data->size_line, &data->endian);
+    data->win = mlx_new_window(data->mlx, L_WIN  , LE_WIN, "fdf");
+    ft_init_map(fd, &data->map);
+    ft_init_mlx(data->map, &data->stp);
+    data->tab = ft_index_window(ft_to_array(data->map), data->stp, data->map);
+    return (data);
 }
