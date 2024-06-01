@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/30 17:42:32 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/01 12:02:56 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 # define HEADER_H
 # define INT_START_X 0
 # define INT_START_Y 0
-# define LE_WIN 1080
-# define L_WIN 1920
+# define LE_WIN 1000
+# define L_WIN 1100
 # define STEP_WIN 50
 # define PI 3.14159265359
 # define ZOOM_FAC 20
 # define ESC_KEY 65307
 # define DESTROY_NOTIFY 17
+#define KEY_ESC 53
 # include "../get_next_line/get_next_line.h"
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
@@ -89,7 +90,7 @@ typedef struct s_data
 	int		bpp;
 	int		size_line;
 	int		endian;
-    int     zoom_level;
+    // int     zoom_level;
 	t_rot angle;
 }			t_data;
 
@@ -157,4 +158,13 @@ void rot_x(t_data *data);
 void update_data_rot(t_data **data);
 void rot_y(t_data *data);
 void rot_z(t_data *data);
+void    draw_image(t_data *data);
+void trans_left(t_data *data);
+void update_data_right(t_data **data);
+void update_data_left(t_data **data);
+void trans_right(t_data *data);
+void trans_up(t_data *data);
+void trans_down(t_data *data);
+void update_data_down(t_data **data);
+void update_data_up(t_data **data);
 #endif

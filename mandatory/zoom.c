@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 08:51:13 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/30 17:50:12 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/01 12:03:34 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int handle_close(t_data *data)
 
 void update_data(t_data **data)
 {
-(*data)->img = mlx_new_image((*data)->mlx, L_WIN, LE_WIN);
 (*data)->img_data = mlx_get_data_addr((*data)->img, &(*data)->bpp, &(*data)->size_line, &(*data)->endian);
 (*data)->tab = ft_index_window(ft_to_array((*data)->map), (*data)->stp, (*data)->map);
 (*data)->tab = rotation_z((*data)->tab, (*data)->map, (*data)->angle.angle_z);
@@ -50,40 +49,81 @@ void update_data(t_data **data)
 }
 void draw_image_in(t_data *data)
 {
-    mlx_clear_window(data->mlx, data->win);
-    mlx_destroy_image(data->mlx, data->img);
-    data->stp.step += data->zoom_level;
+    draw_image(data);
+    data->stp.step = data->stp.step + 6;
     update_data(&data);
+         int i;
+    int j;
+    i = 0;
+    while (i < data->map.line)
+    {
+        j = 0;
+        while (j <data->map.colone)
+        {
+            data->tab[i][j].x_ind += 500;
+            data->tab[i][j].y_ind += 500;
+            j++;
+        }
+        i++;
+    }
     draw_line(data->tab, data->map, data);
     mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 }
 
+void zoom_out_z(t_data **data)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (i < (*data)->map.line)
+    {
+        j = 0;
+        while (j < (*data)->map.colone)
+        {
+            (*data)->tab[i][j].z -= 6;
+            j++;
+        }
+        i++;
+    }
+}
 void draw_image_out(t_data *data)
 {
-    mlx_clear_window(data->mlx, data->win);
-    mlx_destroy_image(data->mlx, data->img);
-    data->stp.step -= data->zoom_level;
+    draw_image(data);
+    data->stp.step -= 6;
     update_data(&data);
+    // zoom_out_z(&data);
+         int i;
+    int j;
+    i = 0;
+    while (i < data->map.line)
+    {
+        j = 0;
+        while (j <data->map.colone)
+        {
+            data->tab[i][j].x_ind += 500;
+            data->tab[i][j].y_ind += 500;
+            j++;
+        }
+        i++;
+    }
     draw_line(data->tab, data->map, data);
     mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 }
 
 int handle_key(int keycode, t_data *data) 
 {
-    // printf("&&&&&&&&&%d\n", keycode);
-    if (keycode == 53)
+    printf("%d\n", keycode);
+    if (keycode == ESC_KEY)
     {
         mlx_destroy_window(data->mlx, data->win);
         exit(0);
     }
-    if (keycode == 65451) 
-    {
-        data->zoom_level++;
+    if (keycode == 65451)
         draw_image_in(data);
-    }
-    if (keycode == 65453 && data->stp.step != 1) 
+    if (keycode == 65453 && data->stp.step > 7)
     {
-        data->zoom_level--;
+        // zoom_out_z(&data);
         draw_image_out(data);
     }
     if (keycode == 120)
@@ -92,5 +132,13 @@ int handle_key(int keycode, t_data *data)
         rot_y(data);
     if (keycode == 122)
         rot_z(data);
+    if (keycode == 65363)
+        trans_left(data);
+    if ( keycode == 65361)
+        trans_right(data);
+    if (keycode == 65364)
+        trans_down(data);
+    if (keycode == 65362)
+        trans_up(data);
     return (0);
 }
