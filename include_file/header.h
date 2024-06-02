@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/01 12:02:56 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/02 11:20:59 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,25 @@
 # define HEADER_H
 # define INT_START_X 0
 # define INT_START_Y 0
-# define LE_WIN 1000
-# define L_WIN 1100
+# define LE_WIN 1920
+# define L_WIN 1180
 # define STEP_WIN 50
 # define PI 3.14159265359
 # define ZOOM_FAC 20
 # define ESC_KEY 65307
 # define DESTROY_NOTIFY 17
-#define KEY_ESC 53
+# define KEY_ESC 53
+# define ROT_X 120
+# define ROT_Y 121
+# define ROT_Z 122
+# define KEY_W 65362
+# define KEY_D 65364
+# define KEY_R 65361
+# define KEY_L 65363
+# define ZOOM_IN 65451
+# define ZOOM_OUT 65453
+# define KEY_P 112
+# define KEY_I 105
 # include "../get_next_line/get_next_line.h"
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
@@ -64,19 +75,12 @@ typedef struct s_map
 	int		point_num;
 }			t_map;
 
-typedef struct s_bres
-{
-	int		dx;
-	int		dy;
-	float	slope;
-}			t_bres;
-
 typedef struct s_rot
 {
-	double angle_x;
-	double angle_y;
-	double angle_z;
-}t_rot;
+	double	angle_x;
+	double	angle_y;
+	double	angle_z;
+}			t_rot;
 
 typedef struct s_data
 {
@@ -84,15 +88,23 @@ typedef struct s_data
 	void	*win;
 	void	*img;
 	char	*img_data;
-	t_point **tab;
+	t_point	**tab;
 	t_map	map;
 	t_mlx	stp;
 	int		bpp;
 	int		size_line;
 	int		endian;
-    // int     zoom_level;
-	t_rot angle;
+	t_rot	angle;
 }			t_data;
+
+typedef struct s_bres_flag
+{
+	int		dx;
+	int		dy;
+	int		sx;
+	int		sy;
+	int		err;
+}			t_bres_flag;
 
 // initial function
 
@@ -101,9 +113,7 @@ void		ft_init_mlx(t_map map, t_mlx *mlx);
 int			num_line(char *buff);
 int			num_colone(char *buff);
 t_point		**ft_index_window(t_point **tab, t_mlx mlx, t_map map);
-t_bres		*ft_initial(t_point x, t_point y);
-int			initial_p_k(t_point x, t_point y);
-t_data *initial_data(int fd);
+t_data		*initial_data(int fd);
 
 // map function
 
@@ -131,6 +141,7 @@ void		whith_color(int i, int j, t_point *tab, char *str);
 
 // draw function
 
+void		draw_image(t_data *data);
 void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void		bresenham(t_point x, t_point y, t_data *data);
 void		draw_line(t_point **tab, t_map map, t_data *data);
@@ -143,28 +154,41 @@ t_point		middle(t_point **tab, t_map map);
 
 int			ft_str_len(char **str);
 void		ft_free_double(char **str, int i);
-void    free_map(t_map map);
+void		free_map(t_map map);
 
-//key function
-// t_point **zoom_int(t_data *data, t_point **tab, t_map map);
-int handle_key(int keycode, t_data *data);
-int handle_close(t_data *data);
+// key function
 
-//image function
-void draw_image_in(t_data *data);
-void draw_image_out(t_data *data);
-void update_data(t_data **data);
-void rot_x(t_data *data);
-void update_data_rot(t_data **data);
-void rot_y(t_data *data);
-void rot_z(t_data *data);
-void    draw_image(t_data *data);
-void trans_left(t_data *data);
-void update_data_right(t_data **data);
-void update_data_left(t_data **data);
-void trans_right(t_data *data);
-void trans_up(t_data *data);
-void trans_down(t_data *data);
-void update_data_down(t_data **data);
-void update_data_up(t_data **data);
+int			handle_key(int keycode, t_data *data);
+int			handle_close(t_data *data);
+
+// image function
+void		draw_image_in(t_data *data);
+void		draw_image_out(t_data *data);
+
+// rotation
+
+void		update_data(t_data **data);
+void		rot_x(t_data *data);
+void		update_data_rot(t_data **data);
+void		rot_y(t_data *data);
+void		rot_z(t_data *data);
+
+// translation
+void		trans_left(t_data *data);
+void		update_data_right(t_data **data);
+void		update_data_left(t_data **data);
+void		trans_right(t_data *data);
+void		trans_up(t_data *data);
+void		trans_down(t_data *data);
+void		update_data_down(t_data **data);
+void		update_data_up(t_data **data);
+void		press_p(t_data *data);
+void		update_data_p(t_data **data);
+void		press_i(t_data *data);
+void		update_data_i(t_data **data);
+
+// free and error function
+void		ft_free_data(t_data *data);
+void		free_tab(t_point **tab, t_map map);
+// void free_map(t_map *map);
 #endif

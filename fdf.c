@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:13:29 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/01 11:09:54 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/02 11:08:25 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,17 @@ int main(int ac, char **av)
         j = 0;
         while (j <data->map.colone)
         {
-            data->tab[i][j].x_ind += 250;
-            data->tab[i][j].y_ind += 250;
+            data->tab[i][j].x_ind += 500;
+            data->tab[i][j].y_ind += 500;
             j++;
         }
         i++;
     }
     draw_line(data->tab, data->map, data);
     mlx_put_image_to_window(data->mlx, data->win, data->img,0, 0);
-    // mlx_key_hook(data->win,(int (*)(int, void *))handle_key, data);
-    mlx_hook(data->win,2, (1L<<0), (int (*)(int, void *))handle_key, data);
+    mlx_key_hook(data->win,(int (*)(int, void *))handle_key, data);
     mlx_hook(data->win, DESTROY_NOTIFY, 0, handle_close, data);
     mlx_loop(data->mlx);
+    close(fd);
+    ft_free_data(data);
 }

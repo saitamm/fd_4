@@ -12,52 +12,58 @@
 
 #include "../include_file/header.h"
 
-int num_line(char *buff)
+int	num_line(char *buff)
 {
-    int i = 0;
-    int len = 0;
-    int in_number = 0; 
+	int	i;
+	int	len;
+	int	in_number;
 
-    while (buff[i] != '\0')
-    {
-        if (buff[i] != '\n')
-        {
-            if (!in_number)
-            {
-                len++;
-                in_number = 1;
-            }
-        }
-        else
-        {
-            in_number = 0; 
-        }
-        i++;
-    }
-    return len;
+	i = 0;
+	len = 0;
+	in_number = 0;
+	while (buff[i] != '\0')
+	{
+		if (buff[i] != '\n')
+		{
+			if (!in_number)
+			{
+				len++;
+				in_number = 1;
+			}
+		}
+		else
+		{
+			in_number = 0;
+		}
+		i++;
+	}
+	return (len);
 }
 
-int num_colone(char *buff)
+int	num_colone(char *buff)
 {
-    int i = 0;
-    int len = 0;
-    int in_number = 0; 
+	int	i;
+	int	len;
+	int	in_number;
 
-    while (buff[i] != '\n' && buff[i] != '\0')
-    {
-        if (buff[i] != ' ')
-        {
-            if (!in_number)
-            {
-                len++;
-                in_number = 1;
-            }
-        }
-        else
-        {
-            in_number = 0; 
-        }
-        i++;
-    }
-    return len;
+	i = 0;
+	len = 0;
+	in_number = 0;
+	while (buff[i] != '\n' && buff[i] != '\0')
+	{
+		if (buff[i] != ' ')
+		{
+			if (!in_number)
+			{
+				len++;
+				in_number = 1;
+			}
+		}
+		else
+		{
+			in_number = 0;
+		}
+		i++;
+	}
+	return (len);
 }

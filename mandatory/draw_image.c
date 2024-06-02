@@ -12,21 +12,21 @@
 
 #include "../include_file/header.h"
 
-void    draw_image(t_data *data)
+void	draw_image(t_data *data)
 {
-    int x;
-    int y;
+	int x;
+	int y;
 
-    x = 0;
-    y = 0;
-    while (x < L_WIN)
-    {
-        y = 0;
-        while (y < LE_WIN)
-        {
-            my_mlx_pixel_put(data, x, y, 202020);
-            y++;
-        }
-        x++;
-    }
+	x = 0;
+	y = 0;
+	while (x < L_WIN)
+	{
+		y = 0;
+		while (y < LE_WIN)
+		{
+			my_mlx_pixel_put(data, x, y, 202020);
+			y++;
+		}
+		x++;
+	}
 }

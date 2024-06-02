@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 09:11:17 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/29 15:12:22 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/02 11:27:12 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ char	to_lower(char c)
 	return (c);
 }
 
-int get_digit(char c, int digits_in_base)
+int	get_digit(char c, int digits_in_base)
 {
-	int max_digit;
+	int	max_digit;
+
 	if (digits_in_base <= 10)
 		max_digit = digits_in_base + '0';
 	else
@@ -34,32 +35,25 @@ int get_digit(char c, int digits_in_base)
 		return (-1);
 }
 
-int ft_atoi_base(const char *str, int str_base, int flag)
+int	ft_atoi_base(const char *str, int str_base, int flag)
 {
-	int result = 0;
-	int sign = 1;
-	int digit;
-    int i;
+	int	result;
+	int	sign;
+	int	digit;
+	int	i;
 
+	result = 0;
+	sign = 1;
 	if (*str == '-')
 	{
 		sign = -1;
 		++str;
 	}
-    i = 0;
+	i = 0;
 	if (flag == 0)
 	{
-		while ((digit = get_digit(to_lower(*str), str_base)) >= 0  && i < 2)
-		{
-			result = result * str_base;
-			result = result + (digit * sign);
-			++str;
-			i++;
-		}
-	}
-	else
-	{
-		while ((digit = get_digit(to_lower(*str), str_base)) >= 0)
+		digit = get_digit(to_lower(*str), str_base);
+		while (digit >= 0 && i < 2)
 		{
 			result = result * str_base;
 			result = result + (digit * sign);
