@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:00:42 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/01 13:45:47 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/03 20:29:26 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,30 @@ t_point	**ft_index_window(t_point **tab, t_mlx mlx, t_map map)
 	return (tab);
 }
 
+void center_point(t_data **data)
+{
+	// int max;
+	// int min;
+	t_point midle;
+	int i = 0;
+	int j = 0;
+
+	// max = max_z((*data)->tab, (*data)->map);
+	// min = min_z((*data)->tab, (*data)->map);
+	midle = middle((*data)->tab, (*data)->map);
+	while (i < (*data)->map.line)
+	{
+		j = 0;
+		while (j < (*data)->map.colone)
+		{
+
+			(*data)->tab[i][j].x_ind -= midle.x_ind;
+			(*data)->tab[i][j].y_ind -= midle.y_ind;
+			j++;
+		}
+		i++;
+	}
+}
 t_data	*initial_data(int fd)
 {
 	t_data *data;
@@ -117,16 +141,17 @@ t_data	*initial_data(int fd)
 	data = (t_data *)malloc(sizeof(t_data));
 	if (!data)
 		return (NULL);
+	ft_init_map(fd, &data->map);
+	ft_init_mlx(data->map, &data->stp);
+	data->tab = ft_index_window(ft_to_array(data->map), data->stp, data->map);
+	center_point(&data);
 	data->mlx = mlx_init();
 	data->img = mlx_new_image(data->mlx, L_WIN, LE_WIN);
 	data->img_data = mlx_get_data_addr(data->img, &data->bpp, &data->size_line,
 			&data->endian);
 	data->win = mlx_new_window(data->mlx, L_WIN, LE_WIN, "fdf");
-	ft_init_map(fd, &data->map);
-	ft_init_mlx(data->map, &data->stp);
-	data->tab = ft_index_window(ft_to_array(data->map), data->stp, data->map);
-	data->angle.angle_z = 45;
-	data->angle.angle_x = 30;
+	data->angle.angle_z =45;
+	data->angle.angle_x = atan(sqrt(2));
 	data->angle.angle_y = 0;
 	return (data);
 }

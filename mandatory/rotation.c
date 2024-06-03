@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:37:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/02 10:32:09 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/03 20:21:30 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,32 +134,31 @@ t_point	**rotation_z(t_point **tab, t_map map, double angle)
 	int		j;
 	double	alpha;
 	int		tmp;
-	t_point	midle;
-	int		max;
-	int		min;
+	// t_point	midle;
+	// int		max;
+	// int		min;
 
-	max = max_z(tab, map);
-	min = min_z(tab, map);
+	// max = max_z(tab, map);
+	// min = min_z(tab, map);
 	i = 0;
 	alpha = angle * PI / 180;
-	midle = middle(tab, map);
 	while (i < map.line)
 	{
 		j = 0;
 		while (j < map.colone)
 		{
-			tab[i][j].x_ind -= midle.x_ind;
-			tab[i][j].y_ind -= midle.y_ind;
+			// tab[i][j].x_ind -= midle.x_ind;
+			// tab[i][j].y_ind -= midle.y_ind;
 			tmp = tab[i][j].x_ind;
 			tab[i][j].x_ind = (double)tab[i][j].x_ind - sin(alpha)
 				* (double)tab[i][j].y_ind;
 			tab[i][j].y_ind = (double)tmp * sin(alpha) + cos(alpha)
 				* (double)tab[i][j].y_ind;
-			if (max <= 10)
-				tab[i][j].z *= 65;
-			else if (max > 10 && max <= 20 && min > 0)
-				tab[i][j].z *= 50;
-			else
+			// if (max <= 10)
+			// 	tab[i][j].z *= 5;
+			// else if (max > 10 && max <= 20 && min > 0)
+			// 	tab[i][j].z *= 50;
+			// else
 				tab[i][j].z *= 3;
 			j++;
 		}

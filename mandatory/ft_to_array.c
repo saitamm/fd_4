@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 10:23:38 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/02 09:41:02 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/03 09:53:15 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ t_point	*sub_array(int pos_y, int colone, char *buff)
 	t_point *array;
 	char **sp;
 	int i;
+
 	array = (t_point *)malloc(sizeof(t_point) * colone);
 	if (!array)
 		return (NULL);

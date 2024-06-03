@@ -6,7 +6,7 @@
 #    By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:15:01 by sait-amm          #+#    #+#              #
-#    Updated: 2024/06/02 09:30:23 by sait-amm         ###   ########.fr        #
+#    Updated: 2024/06/03 09:58:34 by sait-amm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ SRC =	fdf.c \
 		mandatory/rot_xyz.c \
 		mandatory/draw_image.c \
 		mandatory/translation.c \
-		mandatory/fun_free.c
+		mandatory/fun_free.c \
+		mandatory/errors.c
 	
 
 OBJF = $(SRC:.c=.o)

@@ -6,17 +6,20 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:29:10 by sait-amm          #+#    #+#             */
-/*   Updated: 2023/12/01 09:47:05 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/03 10:12:43 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
 		i++;

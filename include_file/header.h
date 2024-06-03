@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/02 11:20:59 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/03 20:31:11 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,5 +190,9 @@ void		update_data_i(t_data **data);
 // free and error function
 void		ft_free_data(t_data *data);
 void		free_tab(t_point **tab, t_map map);
+// int not_same_colone(char *str);
 // void free_map(t_map *map);
+int	min_z(t_point **tab, t_map map);
+int	max_z(t_point **tab, t_map map);
+void center_point(t_data **data);
 #endif

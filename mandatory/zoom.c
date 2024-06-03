@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 08:51:13 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/02 10:13:27 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/03 09:36:03 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 //     new_height = LE_WIN / data->zoom_level;
 //     new_img = mlx_new_image(data->mlx, new_width, new_height);
 //     new_data = mlx_get_data_addr(new_img, &data->bpp, &data->size_line,
-		&data->endian);
+		// &data->endian);
 //     mlx_destroy_image(data->mlx, data->img);
 //     data->img = new_img;
 //     data->img_data = new_data;

@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:23:14 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/02 10:06:55 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/03 20:34:01 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	update_data_left(t_data **data)
 	(*data)->img_data = mlx_get_data_addr((*data)->img, &(*data)->bpp,
 			&(*data)->size_line, &(*data)->endian);
 	// (*data)->tab = ft_index_window(ft_to_array((*data)->map), (*data)->stp,
-			(*data)->map);
+			// (*data)->map);
 	while (i < (*data)->map.line)
 	{
 		j = 0;
@@ -163,6 +163,7 @@ void	update_data_i(t_data **data)
 	free_tab((*data)->tab, (*data)->map);
 	(*data)->tab = ft_index_window(ft_to_array((*data)->map), (*data)->stp,
 			(*data)->map);
+	center_point(data);
 	(*data)->tab = rotation_z((*data)->tab, (*data)->map,
 			(*data)->angle.angle_z);
 	(*data)->tab = rotation_x((*data)->tab, (*data)->map,
