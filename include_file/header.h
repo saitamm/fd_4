@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/03 20:31:11 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/04 19:15:38 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # define KEY_ESC 53
 # define ROT_X 120
 # define ROT_Y 121
-# define ROT_Z 122
 # define KEY_W 65362
 # define KEY_D 65364
 # define KEY_R 65361

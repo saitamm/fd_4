@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 10:18:14 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/03 11:53:09 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/04 19:17:31 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	bresenham(t_point p0, t_point p1, t_data *data)
 	{
 		color = crem_color(&p0, p1, 72);
 		my_mlx_pixel_put(data, p0.x_ind, p0.y_ind, color);
-		// printf("x_end: %lf y_end: %lf\nx_start: %lf y_start: %lf\n",p1.x_ind,  p1.y_ind,p0.x_ind, p0.y_ind);
-		if (p0.x_ind == p1.x_ind || p0.y_ind == p1.y_ind)
+		// printf("x_end: %d y_end: %d\n",p0.x_ind, p0.y_ind);
+		if (p0.x_ind == p1.x_ind && p0.y_ind == p1.y_ind)
 			break ;
 		e2 = s.err * 2;
 		if (e2 > -s.dy)

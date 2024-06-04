@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 08:51:13 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/03 09:36:03 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/04 20:00:38 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	handle_close(t_data *data)
 	return (0);
 }
 
-void	update_data(t_data **data)
+void		update_data(t_data **data)
 {
 	(*data)->img_data = mlx_get_data_addr((*data)->img, &(*data)->bpp,
 			&(*data)->size_line, &(*data)->endian);
@@ -133,8 +133,6 @@ int	handle_key(int keycode, t_data *data)
 		rot_x(data);
 	if (keycode == ROT_Y)
 		rot_y(data);
-	if (keycode == ROT_Z)
-		rot_z(data);
 	if (keycode == KEY_L)
 		trans_left(data);
 	if (keycode == KEY_R)
