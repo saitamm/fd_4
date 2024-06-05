@@ -6,11 +6,11 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:29:50 by sait-amm          #+#    #+#             */
-/*   Updated: 2023/12/01 14:32:06 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/05 08:32:00 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include_file/libft.h"
 
 static int	ft_len(const char *s, char c)
 {

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   draw_image.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 15:14:10 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 08:32:00 by sait-amm         ###   ########.fr       */
+/*   Created: 2024/06/01 08:38:28 by sait-amm          #+#    #+#             */
+/*   Updated: 2024/06/05 11:53:53 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include_file/libft.h"
+#include "../include_file/fdf.h"
 
-int	ft_strchr(const char *s, int c)
+void	draw_image(t_data *data)
 {
-	char	find;
-	int		i;
+	int	x;
+	int	y;
 
-	find = (unsigned char)c;
-	i = 0;
-	while (s[i] != '\0')
+	x = 0;
+	y = 0;
+	while (x < L_WIN)
 	{
-		if (s[i] == find)
-			return (1);
-		i++;
+		y = 0;
+		while (y < LE_WIN)
+		{
+			my_mlx_pixel_put(data, x, y, 0x141414);
+			y++;
+		}
+		x++;
 	}
-	return (0);
 }

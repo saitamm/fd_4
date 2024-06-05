@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 15:14:10 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 08:32:00 by sait-amm         ###   ########.fr       */
+/*   Created: 2024/05/09 12:26:57 by sait-amm          #+#    #+#             */
+/*   Updated: 2024/06/05 11:57:37 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include_file/libft.h"
+#include "../include_file/fdf.h"
 
-int	ft_strchr(const char *s, int c)
+char	*ft_read_map(int fd)
 {
-	char	find;
-	int		i;
+	char	*buff;
+	char	*str;
+	char	*tmp;
 
-	find = (unsigned char)c;
-	i = 0;
-	while (s[i] != '\0')
+	str = NULL;
+	while (1)
 	{
-		if (s[i] == find)
-			return (1);
-		i++;
+		buff = get_next_line(fd);
+		tmp = str;
+		str = ft_strjoin(tmp, buff);
+		if (!buff)
+		{
+			free(tmp);
+			break ;
+		}
+		free(buff);
 	}
+	return (str);
+}
+
+int	handle_close(t_data *data)
+{
+	mlx_destroy_window(data->mlx, data->win);
+	exit(0);
 	return (0);
 }

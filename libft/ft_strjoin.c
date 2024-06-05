@@ -6,11 +6,11 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 20:01:58 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/02 09:16:48 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/05 08:32:00 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include_file/libft.h"
 
 static char	*ft_cpy(const char *s1, char const *s2)
 {

@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   handle_close.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 15:14:10 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 08:32:00 by sait-amm         ###   ########.fr       */
+/*   Created: 2024/06/05 08:59:07 by sait-amm          #+#    #+#             */
+/*   Updated: 2024/06/05 09:02:26 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include_file/libft.h"
+#include "../include_file/fdf.h"
 
-int	ft_strchr(const char *s, int c)
+int	handle_key_close(int keycode, t_data *data)
 {
-	char	find;
-	int		i;
-
-	find = (unsigned char)c;
-	i = 0;
-	while (s[i] != '\0')
+	if (keycode == ESC_KEY)
 	{
-		if (s[i] == find)
-			return (1);
-		i++;
+		ft_free_data(data);
+		exit(0);
 	}
 	return (0);
 }

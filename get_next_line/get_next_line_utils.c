@@ -6,37 +6,11 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 10:16:19 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/05/09 10:04:00 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/05 08:33:34 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-
-// size_t	ft_strlen(char *str)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (str[i])
-// 		i++;
-// 	return (i);
-// }
-
-// char	*ft_strdup(char *s)
-// {
-// 	char	*b;
-// 	size_t	i;
-
-// 	i = 0;
-// 	b = malloc(ft_strlen(s) + 1);
-// 	while (s[i])
-// 	{
-// 		b[i] = s[i];
-// 		i++;
-// 	}
-// 	b[i] = '\0';
-// 	return (b);
-// }
+#include "../include_file/get_next_line.h"
 
 char	*ft_cpy(char *s1, char *s2)
 {

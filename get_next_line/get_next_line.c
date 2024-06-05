@@ -6,11 +6,11 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 09:46:42 by sait-amm          #+#    #+#             */
-/*   Updated: 2023/12/27 09:51:40 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/05 08:33:34 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../include_file/get_next_line.h"
 
 char	*ft_free(char *str, char *ret)
 {

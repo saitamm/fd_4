@@ -6,11 +6,11 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:38:25 by sait-amm          #+#    #+#             */
-/*   Updated: 2023/11/30 21:36:31 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/05 08:32:00 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include_file/libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
