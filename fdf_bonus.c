@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 08:55:08 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 12:13:36 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/06 09:36:32 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	if (fd < 0)
 		exit(1);
 	data = initial_data(fd);
-	data->tab = rotation_z(data->tab, data->map, 45);
+	data->tab = rotation_z_bonus(data->tab, data->map, 45);
 	data->tab = rotation_x(data->tab, data->map, 45);
 	center_point(&data);
 	draw_image(data);

@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 12:07:22 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:35:19 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define KEY_D 65364
 # define KEY_R 65361
 # define KEY_L 65363
+# define KEY_Z 122
 # define ZOOM_IN 65451
 # define ZOOM_OUT 65453
 # define KEY_P 112
@@ -94,6 +95,7 @@ typedef struct s_data
 	int		size_line;
 	int		endian;
 	t_rot	angle;
+	int		z_choice;
 }			t_data;
 
 typedef struct s_bres_flag
@@ -105,6 +107,12 @@ typedef struct s_bres_flag
 	int		err;
 }			t_bres_flag;
 
+
+typedef struct s_z
+{
+	int max_z;
+	int min_z;
+}t_z;
 // initial function
 
 void		ft_init_map(int fd, t_map *map);
@@ -125,6 +133,7 @@ char		*ft_read_map(int fd);
 t_point		**rotation_x(t_point **tab, t_map map, double angle);
 t_point		**rotation_y(t_point **tab, t_map map, double angle);
 t_point		**rotation_z(t_point **tab, t_map map, double angle);
+t_point	**rotation_z_bonus(t_point **tab, t_map map, double angle);
 
 // color function
 
@@ -171,6 +180,8 @@ void		rot_x(t_data *data);
 void		update_data_rot(t_data **data);
 void		rot_y(t_data *data);
 void		rot_z(t_data *data);
+void    bonus_choice(t_data *data);
+void update_z(t_data **data);
 
 // translation
 void		trans_left(t_data *data);

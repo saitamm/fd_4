@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 08:51:13 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 12:13:36 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:10:05 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	draw_image_out(t_data *data)
 
 int	handle_key(int keycode, t_data *data)
 {
+	// printf("^^^^^^^^^^^^^^%d\n", keycode);
 	if (keycode == ZOOM_IN)
 		draw_image_in(data);
 	if (keycode == ZOOM_OUT && data->stp.step > 1)
@@ -72,5 +73,7 @@ int	handle_key(int keycode, t_data *data)
 		press_p(data);
 	if (keycode == KEY_I)
 		press_i(data);
+	if (keycode == KEY_Z)
+		bonus_choice(data);
 	return (0);
 }

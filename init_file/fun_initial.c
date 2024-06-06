@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:00:42 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 11:56:00 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:36:33 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,6 @@ t_data	*initial_data(int fd)
 	data->angle.angle_z = 45;
 	data->angle.angle_x = 45;
 	data->angle.angle_y = 0;
+	data->z_choice = 2;
 	return (data);
 }

@@ -6,7 +6,7 @@
 #    By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:15:01 by sait-amm          #+#    #+#              #
-#    Updated: 2024/06/05 09:07:58 by sait-amm         ###   ########.fr        #
+#    Updated: 2024/06/06 09:36:56 by sait-amm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,9 @@ SRC =	fdf.c \
 		error_file/errors.c \
 		error_file/free_fun.c \
 		error_file/fun_free.c \
-		map_file/handle_close.c 
-	
+		map_file/handle_close.c \
+		move_file/help_fun.c
+
 SRCB =	fdf_bonus.c \
 		libft/ft_split.c \
 		libft/ft_strlen.c \
@@ -66,7 +67,11 @@ SRCB =	fdf_bonus.c \
 		move_file/zoom.c \
 		error_file/errors.c \
 		error_file/free_fun.c \
-		error_file/fun_free.c 
+		error_file/fun_free.c \
+		move_file/ft_utils.c \
+		move_file/help_fun.c \
+		map_file/handle_close.c \
+		move_file/rotation_bonus.c
 
 
 OBJF = $(SRC:.c=.o)
