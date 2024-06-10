@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 09:43:19 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 08:34:56 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:25:31 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,24 @@
 // 	// return (i);
 // }
 
-// int  not_same_colone(char *buff)
-// {
-//     int i;
-//     size_t l;
-//     char **str;
-//     size_t k;
+int   not_same_colone(t_map map)
+{
+    int i;
+    char **str;
 
-//     i = 0;
-//     str = ft_split(buff, '\n');
-//     // l = ft_strlen_2(str[0]);
-//     k = 9;
-//     l = 0;
-//     while (str[i])
-//     {
-//         ft_strlen_2(str[i]);
-//     // printf(":::::::::::::%zu\n", k);
-//         if (k != l)
-//         {
-//             printf("::::::::::::");
-//             ft_free_double(str, ft_str_len(str));
-//             return (0);
-//         }
-//         i++;
-//     }
-//     ft_free_double(str, ft_str_len(str));
-//     return (1);
-// }
+    i = 0;
+    str = ft_split(map.buff, '\n');
+    // l = ft_strlen_2(str[0]);
+    while (str[i])
+    {
+    // printf(":::::::::::::%zu\n", k);
+        if ((int  )ft_strlen(str[i]) != map.colone)
+        {
+            ft_free_double(str, ft_str_len(str));
+            return (0);
+        }
+        i++;
+    }
+    ft_free_double(str, ft_str_len(str));
+    return (1);
+}

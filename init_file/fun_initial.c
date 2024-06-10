@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:00:42 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/06 10:36:33 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:34:05 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,12 @@ t_data	*initial_data(int fd)
 	ft_init_map(fd, &data->map);
 	ft_init_mlx(data->map, &data->stp);
 	data->tab = ft_index_window(ft_to_array(data->map), data->stp, data->map);
+	if (not_same_colone(data.map)== 0)
+	{
+	 	write(1, "Found wrong line length. Exiting.\n", 34);
+		ft_free_data()
+		exit(1);
+	}
 	center_point(&data);
 	data->mlx = mlx_init();
 	data->img = mlx_new_image(data->mlx, L_WIN, LE_WIN);
