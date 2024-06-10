@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 08:55:08 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/06 09:36:32 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/07 09:28:28 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int ac, char **av)
 		}
 		i++;
 	}
-	mlx_string_put(data->mlx, data->win, 50, 50, 0xFFFFFF, "Hello, MiniLibX!");
+	// mlx_string_put(data->mlx, data->win, 50, 50, 0xFFFFFF, "Hello, MiniLibX!");
 	draw_line(data->tab, data->map, data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 	// mlx_key_hook(data->win,(int (*)(int, void *))handle_key, data);

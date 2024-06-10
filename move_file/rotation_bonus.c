@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:34:34 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/06 10:40:57 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/07 09:24:47 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void    bonus_choice(t_data *data)
         {
             data->tab[i][j].x_ind += 500;
 			data->tab[i][j].y_ind += 500;
-            data->tab[i][j].y_ind -= data->tab[i][j].z;
             j++;
         }
         i++;

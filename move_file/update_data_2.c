@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 08:47:54 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/06 08:43:06 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/10 10:27:42 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	update_data_i(t_data **data)
 	(*data)->tab = ft_index_window(ft_to_array((*data)->map), (*data)->stp,
 			(*data)->map);
 	center_point(data);
-	(*data)->tab = rotation_z((*data)->tab, (*data)->map,
+	(*data)->tab = rotation_z_bonus((*data)->tab, (*data)->map,
 			(*data)->angle.angle_z);
 	(*data)->tab = rotation_x((*data)->tab, (*data)->map,
 			(*data)->angle.angle_x);
@@ -76,7 +76,7 @@ void	update_data(t_data **data)
 	free_tab((*data)->tab, (*data)->map);
 	(*data)->tab = ft_index_window(ft_to_array((*data)->map), (*data)->stp,
 			(*data)->map);
-	(*data)->tab = rotation_z((*data)->tab, (*data)->map,
+	(*data)->tab = rotation_z_bonus((*data)->tab, (*data)->map,
 			(*data)->angle.angle_z);
 	(*data)->tab = rotation_x((*data)->tab, (*data)->map,
 			(*data)->angle.angle_x);
@@ -84,6 +84,7 @@ void	update_data(t_data **data)
 			(*data)->angle.angle_y);
 	i = 0;
 	center_point(data);
+
 	while (i < (*data)->map.line)
 	{
 		j = 0;
@@ -91,6 +92,7 @@ void	update_data(t_data **data)
 		{
 			(*data)->tab[i][j].x_ind += 500;
 			(*data)->tab[i][j].y_ind += 500;
+			j++;
 				
 		}
 		i++;
