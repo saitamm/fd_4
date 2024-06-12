@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/10 15:25:31 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/12 08:57:59 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,6 +207,7 @@ int			max_z(t_point **tab, t_map map);
 void		center_point(t_data **data);
 int			handle_key_close(int keycode, t_data *data);
 int			ft_help_z(int z, int max, int min);
-
+void free_not_same(t_data *data);
+int check_file(char *str);
 
 #endif

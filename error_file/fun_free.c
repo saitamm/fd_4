@@ -6,17 +6,18 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 08:54:38 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 08:34:56 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/12 08:56:17 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include_file/fdf.h"
 
-// void free_map(t_map *map)
-// {
-//     free(map->buff);
-//     free(map);
-// }
+void free_not_same(t_data *data)
+{
+	free(data->map.buff);
+	free(data);
+}
+
 void	free_tab(t_point **tab, t_map map)
 {
 	int	i;

@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 08:44:13 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/10 10:25:49 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:07:36 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,11 @@ void	whith_color(int i, int j, t_point *tab, char *str)
 void	ft_init_map(int fd, t_map *map)
 {
 	map->buff = ft_read_map(fd);
+	if (map->buff == NULL)
+	{
+		write(1, "no data found\n", 15);
+		exit(1);
+	}
 	map->line = num_line(map->buff);
 	map->colone = num_colone(map->buff);
 	map->point_num = map->line * map->colone;

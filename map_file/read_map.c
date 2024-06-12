@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 12:26:57 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 11:57:37 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:05:03 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ char	*ft_read_map(int fd)
 		if (!buff)
 		{
 			free(tmp);
-			break ;
+			return (str);
 		}
-		free(buff);
+		if (buff)
+			free(buff);
 	}
 	return (str);
 }
