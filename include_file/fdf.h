@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/12 08:57:59 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/26 21:19:48 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@
 # define ZOOM_OUT 65453
 # define KEY_P 112
 # define KEY_I 105
-# include "../minilibx-linux/mlx.h"
 # include "get_next_line.h"
 # include "libft.h"
 # include <errno.h>
 # include <fcntl.h>
+# include <mlx.h>
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -107,12 +107,11 @@ typedef struct s_bres_flag
 	int		err;
 }			t_bres_flag;
 
-
 typedef struct s_z
 {
-	int max_z;
-	int min_z;
-}t_z;
+	int		max_z;
+	int		min_z;
+}			t_z;
 // initial function
 
 void		ft_init_map(int fd, t_map *map);
@@ -133,7 +132,7 @@ char		*ft_read_map(int fd);
 t_point		**rotation_x(t_point **tab, t_map map, double angle);
 t_point		**rotation_y(t_point **tab, t_map map, double angle);
 t_point		**rotation_z(t_point **tab, t_map map, double angle);
-t_point	**rotation_z_bonus(t_point **tab, t_map map, double angle);
+t_point		**rotation_z_bonus(t_point **tab, t_map map, double angle);
 
 // color function
 
@@ -180,8 +179,8 @@ void		rot_x(t_data *data);
 void		update_data_rot(t_data **data);
 void		rot_y(t_data *data);
 void		rot_z(t_data *data);
-void    bonus_choice(t_data *data);
-void update_z(t_data **data);
+void		bonus_choice(t_data *data);
+void		update_z(t_data **data);
 
 // translation
 void		trans_left(t_data *data);
@@ -200,14 +199,14 @@ void		update_data_i(t_data **data);
 // free and error function
 void		ft_free_data(t_data *data);
 void		free_tab(t_point **tab, t_map map);
-int not_same_colone(t_map str);
+int			not_same_colone(t_map str);
 // void free_map(t_map *map);
 int			min_z(t_point **tab, t_map map);
 int			max_z(t_point **tab, t_map map);
 void		center_point(t_data **data);
 int			handle_key_close(int keycode, t_data *data);
 int			ft_help_z(int z, int max, int min);
-void free_not_same(t_data *data);
-int check_file(char *str);
+void		free_not_same(t_data *data);
+int			check_file(char *str);
 
 #endif

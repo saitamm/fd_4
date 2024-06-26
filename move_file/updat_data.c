@@ -20,11 +20,10 @@ void	update_data_rot(t_data **data)
 	(*data)->tab = ft_index_window(ft_to_array((*data)->map), (*data)->stp,
 			(*data)->map);
 	center_point(data);
-
 	(*data)->tab = rotation_z_bonus((*data)->tab, (*data)->map,
 			-(*data)->angle.angle_z);
 	(*data)->tab = rotation_x((*data)->tab, (*data)->map,
-			 - (*data)->angle.angle_x );
+			-(*data)->angle.angle_x);
 	(*data)->tab = rotation_y((*data)->tab, (*data)->map,
 			(*data)->angle.angle_y);
 }

@@ -46,5 +46,3 @@ t_point	**rotation_y(t_point **tab, t_map map, double angle)
 	}
 	return (tab);
 }
-
-

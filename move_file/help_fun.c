@@ -6,15 +6,15 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:09:55 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/12 12:38:09 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/26 21:15:26 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include_file/fdf.h"
+#include "../include_file/fdf.h"
 
 int	ft_help_z(int z, int max, int min)
 {
-	if (max < 10 && min >= 0)
+	if (max <= 10 && min >= 0)
 		z *= 65;
 	else if (max > 10 && max <= 20 && min > 0)
 		z *= 50;

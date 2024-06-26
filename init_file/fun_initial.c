@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:00:42 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/12 12:53:16 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/24 19:03:31 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ t_data	*initial_data(int fd)
 	if (!data)
 		return (NULL);
 	ft_init_map(fd, &data->map);
-	if (not_same_colone(data->map)== 0)
+	if (not_same_colone(data->map) == 0)
 	{
-	 	write(1, "Found wrong line length. Exiting.\n", 34);
+		write(1, "Found wrong line length. Exiting.\n", 34);
 		free_not_same(data);
 		exit(1);
 	}

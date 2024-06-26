@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 10:24:09 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 08:42:59 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/25 19:25:32 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	crem_red(int *x_red, int y_red, int nbr_pixel)
 	else if (*x_red > y_red)
 		*x_red = *x_red - step_r(*x_red, y_red, nbr_pixel);
 }
+
 void	crem_green(int *x_green, int y_green, int nbr_pixel)
 {
 	if (*x_green < y_green)
@@ -26,6 +27,7 @@ void	crem_green(int *x_green, int y_green, int nbr_pixel)
 	else if (*x_green > y_green)
 		*x_green = *x_green - step_g(*x_green, y_green, nbr_pixel);
 }
+
 void	crem_blue(int *x_blue, int y_blue, int nbr_pixel)
 {
 	if (*x_blue < y_blue)

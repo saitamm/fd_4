@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include_file/fdf.h" 
+#include "../include_file/fdf.h"
 
 t_point	**rotation_x(t_point **tab, t_map map, double angle)
 {
@@ -105,10 +105,10 @@ t_point	middle(t_point **tab, t_map map)
 
 t_point	**rotation_z(t_point **tab, t_map map, double angle)
 {
-	int		i;
-	int		j;
-	int		tmp;
-	t_z		z;
+	int	i;
+	int	j;
+	int	tmp;
+	t_z	z;
 
 	i = 0;
 	z.max_z = max_z(tab, map);

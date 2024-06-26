@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 09:45:33 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/12 13:05:49 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/25 19:16:49 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ int	num_line(char *buff)
 			}
 		}
 		else
-		{
 			in_number = 0;
-		}
 		i++;
 	}
 	return (len);
@@ -64,9 +62,7 @@ int	num_colone(char *buff)
 			}
 		}
 		else
-		{
 			in_number = 0;
-		}
 		i++;
 	}
 	return (len);

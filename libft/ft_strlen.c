@@ -6,12 +6,11 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:29:10 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/05 08:32:00 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:54:32 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include_file/libft.h"
-
 
 size_t	ft_strlen(const char *str)
 {

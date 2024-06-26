@@ -6,7 +6,7 @@
 #    By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:15:01 by sait-amm          #+#    #+#              #
-#    Updated: 2024/06/10 15:31:25 by sait-amm         ###   ########.fr        #
+#    Updated: 2024/06/26 20:21:00 by sait-amm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,7 @@ BONUS = fdf_bonus
 
 C = cc
 
-CFLAGS = -Wall -Werror -Wextra  #-fsanitize=address -g3
+CFLAGS = -Wall -Werror -Wextra  -fsanitize=address -g3
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 08:44:13 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/12 13:07:36 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/25 19:18:51 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,13 @@ void	whithout_color(int i, int j, t_point *tab, char *str)
 char	*add_char(char *str)
 {
 	char	*src;
-	size_t		i;
-	int j;
+	size_t	i;
+	int		j;
+	size_t	k;
 
 	i = 0;
 	j = 0;
-	size_t k = ft_strlen(str);
-	// printf("%zu\n", k);
-
+	k = ft_strlen(str);
 	src = malloc(7 * sizeof(char));
 	if (!src)
 		return (NULL);
@@ -52,11 +51,10 @@ char	*add_char(char *str)
 
 void	whith_color(int i, int j, t_point *tab, char *str)
 {
-	size_t k;
-	char *tmp;
+	size_t	k;
+	char	*tmp;
 
 	tab->y = i;
-	tmp = NULL;
 	tab->x = j;
 	tab->z = ft_atoi(str);
 	while (str && str[0] != 'x')
@@ -74,10 +72,8 @@ void	whith_color(int i, int j, t_point *tab, char *str)
 	else
 	{
 		tab->red = ft_atoi_base(str, 16, 0);
-		str = str + 2;
-		tab->green = ft_atoi_base(str, 16, 0);
-		str = str + 2;
-		tab->blue = ft_atoi_base(str, 16, 0);
+		tab->green = ft_atoi_base(str + 2, 16, 0);
+		tab->blue = ft_atoi_base(str + 4, 16, 0);
 	}
 }
 
