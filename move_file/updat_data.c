@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 08:45:48 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/07 09:25:26 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/27 20:08:45 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	update_data_rot(t_data **data)
 {
-	(*data)->img_data = mlx_get_data_addr((*data)->img, &(*data)->bpp,
-			&(*data)->size_line, &(*data)->endian);
 	free_tab((*data)->tab, (*data)->map);
 	(*data)->tab = ft_index_window(ft_to_array((*data)->map), (*data)->stp,
 			(*data)->map);

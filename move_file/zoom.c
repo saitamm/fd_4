@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 08:51:13 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/26 12:04:41 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/27 18:47:51 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ int	handle_key(int keycode, t_data *data)
 		press_i(data);
 	if (keycode == KEY_Z)
 		bonus_choice(data);
+	if (keycode == 65307)
+		handle_key_close(keycode, data);
 	return (0);
 }

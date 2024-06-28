@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:14:00 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/26 21:19:48 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/27 18:49:18 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@
 # include "libft.h"
 # include <errno.h>
 # include <fcntl.h>
-# include <mlx.h>
 # include <math.h>
+# include <mlx.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
@@ -204,9 +204,11 @@ int			not_same_colone(t_map str);
 int			min_z(t_point **tab, t_map map);
 int			max_z(t_point **tab, t_map map);
 void		center_point(t_data **data);
-int			handle_key_close(int keycode, t_data *data);
+void		handle_key_close(int keycode, t_data *data);
 int			ft_help_z(int z, int max, int min);
+int			handle_key_close_mand(int keycode, t_data *data);
 void		free_not_same(t_data *data);
 int			check_file(char *str);
+t_point		**tab_iso(t_data *data);
 
 #endif

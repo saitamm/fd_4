@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:09:55 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/26 21:15:26 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/27 18:05:44 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	ft_help_z(int z, int max, int min)
 {
 	if (max <= 10 && min >= 0)
-		z *= 65;
+		z *= 25;
 	else if (max > 10 && max <= 20 && min > 0)
-		z *= 50;
+		z *= 25;
 	else
-		z *= 3;
+		z *= 1;
 	return (z);
 }

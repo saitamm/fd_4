@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 08:47:54 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/26 21:00:01 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/27 20:08:15 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,7 @@ void	update_data_i(t_data **data)
 	(*data)->tab = ft_index_window(ft_to_array((*data)->map), (*data)->stp,
 			(*data)->map);
 	center_point(data);
-	(*data)->tab = rotation_z_bonus((*data)->tab, (*data)->map,
-			(*data)->angle.angle_z);
-	(*data)->tab = rotation_x((*data)->tab, (*data)->map,
-			(*data)->angle.angle_x);
+	(*data)->tab = tab_iso(*data);
 	i = 0;
 	while (i < (*data)->map.line)
 	{

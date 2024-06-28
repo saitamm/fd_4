@@ -6,7 +6,7 @@
 /*   By: sait-amm <sait-amm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:34:34 by sait-amm          #+#    #+#             */
-/*   Updated: 2024/06/26 21:17:47 by sait-amm         ###   ########.fr       */
+/*   Updated: 2024/06/27 19:59:49 by sait-amm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,7 @@ void	update_z(t_data **data)
 		}
 		i++;
 	}
-	(*data)->tab = rotation_z_bonus((*data)->tab, (*data)->map,
-			(*data)->angle.angle_z);
-	(*data)->tab = rotation_x((*data)->tab, (*data)->map,
-			(*data)->angle.angle_x);
+	(*data)->tab = tab_iso(*data);
 }
 
 void	bonus_choice(t_data *data)
@@ -96,7 +93,7 @@ void	bonus_choice(t_data *data)
 		while (j < data->map.colone)
 		{
 			data->tab[i][j].x_ind += 500;
-			data->tab[i][j].y_ind += 700;
+			data->tab[i][j].y_ind += 500;
 			j++;
 		}
 		i++;
